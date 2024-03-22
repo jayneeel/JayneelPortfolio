@@ -13,47 +13,77 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-            child: Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
-      child: Center(
-        child: Container(
-          width: 500,
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.black, width: 5),
-              borderRadius: const BorderRadius.only(topLeft: Radius.circular(70), topRight: Radius.circular(70))),
-          child: ScrollConfiguration(
-            behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Center(
-                      child: Container(
-                    width: 200,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.black87,
-                    ),
-                  )),
-                  const AppBarSection(),
-                  SizeConstant.getHeightSpace(16),
-                  const FeaturedSection(),
-                  SizeConstant.getHeightSpace(16),
-                  const ExperienceSection(),
-                  SizeConstant.getHeightSpace(16),
-                  const SkillSection(),
-                  SizeConstant.getHeightSpace(16),
-                  const ProjectsSection(),
-                  SizeConstant.getHeightSpace(16),
-                ],
+            child: Stack(
+      children: [
+        Container(
+          width: double.infinity,
+          height: double.maxFinite,
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+            colors: [
+              Color(0xFF050505),
+              Color(0xFF2A2B30),
+            ],
+          )),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
+          child: Center(
+            child: Container(
+              width: 500,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                  border: Border.all(color: Colors.black, width: 5),
+                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(70), topRight: Radius.circular(70))),
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                          child: Container(
+                        width: 200,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.black87,
+                        ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                width: 40,
+                                  height: 40,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.grey,
+                                    shape: BoxShape.circle,
+                                  ),
+                                )
+                              ],
+                            ),
+                      )),
+                      const AppBarSection(),
+                      SizeConstant.getHeightSpace(16),
+                      const FeaturedSection(),
+                      SizeConstant.getHeightSpace(16),
+                      const ExperienceSection(),
+                      SizeConstant.getHeightSpace(16),
+                      const SkillSection(),
+                      SizeConstant.getHeightSpace(16),
+                      const ProjectsSection(),
+                      SizeConstant.getHeightSpace(16),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        )
+      ],
     )));
   }
 }
