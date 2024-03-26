@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
-import '../widgets/app_bar_section_widget.dart';
-import '../widgets/experience_section_widget.dart';
-import '../widgets/featured_section_widget.dart';
-import '../widgets/project_section_widget.dart';
-import '../widgets/skills_section_widget.dart';
+import 'package:jayneel_portfolio/widgets/education_section_widget.dart';
+import '../../../widgets/app_bar_section_widget.dart';
+import '../../../widgets/experience_section_widget.dart';
+import '../../../widgets/featured_section_widget.dart';
+import '../../../widgets/project_section_widget.dart';
+import '../../../widgets/skills_section_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               width: 500,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                  color: Colors.white,
                   border: Border.all(color: Colors.black, width: 5),
                   borderRadius: const BorderRadius.only(topLeft: Radius.circular(70), topRight: Radius.circular(70))),
               child: ScrollConfiguration(
@@ -51,31 +52,32 @@ class HomeScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(30),
                           color: Colors.black87,
                         ),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                width: 40,
-                                  height: 40,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.grey,
-                                    shape: BoxShape.circle,
-                                  ),
-                                )
-                              ],
-                            ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 40,
+                              height: 40,
+                              decoration: const BoxDecoration(
+                                color: Colors.grey,
+                                shape: BoxShape.circle,
+                              ),
+                            )
+                          ],
+                        ),
                       )),
                       const AppBarSection(),
-                      SizeConstant.getHeightSpace(16),
+                      SizeConstant.getHeightSpace(22),
                       const FeaturedSection(),
-                      SizeConstant.getHeightSpace(16),
+                      SizeConstant.getHeightSpace(22),
                       const ExperienceSection(),
-                      SizeConstant.getHeightSpace(16),
+                      SizeConstant.getHeightSpace(22),
                       const SkillSection(),
-                      SizeConstant.getHeightSpace(16),
+                      SizeConstant.getHeightSpace(22),
                       const ProjectsSection(),
-                      SizeConstant.getHeightSpace(16),
+                      SizeConstant.getHeightSpace(22),
+                      const EducationSection()
                     ],
                   ),
                 ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
 import '../constants/constant_fonts.dart';
-import '../screens/open_asset.dart';
 
 class AppBarSection extends StatelessWidget {
   const AppBarSection({

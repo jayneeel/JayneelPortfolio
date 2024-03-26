@@ -28,7 +28,7 @@ class ExperienceCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(position),
-              Text(duration),
+              Text(duration, style: const TextStyle(fontStyle: FontStyle.italic),),
             ],
           ),
           SizeConstant.getHeightSpace(10),

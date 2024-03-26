@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jayneel_portfolio/constants/constant_fonts.dart';
-import 'package:jayneel_portfolio/screens/home_screen.dart';
+import 'package:jayneel_portfolio/screens/home/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());

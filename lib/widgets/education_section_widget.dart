@@ -9,11 +9,27 @@ class EducationSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Skills",
+        const Text(
+          "Education",
           style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
         ),
+        educationCard("Datta Meghe College of Engineering, Airoli"),
+        educationCard("Vidya Prasarak Mandal Polytechnic, Thane"),
+        educationCard("D.A.V Public School, Airoli"),
       ],
     );
+  }
+
+  Container educationCard(String instituteName) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          border: Border.all(color: const Color(0xFF464646)),
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey.shade100,
+        ),
+        child: Text(instituteName),
+      );
   }
 }
