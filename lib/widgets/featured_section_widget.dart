@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
 import 'package:jayneel_portfolio/screens/home/controller/home_controller.dart';
-import 'dart:html' as html;
 import '../constants/constant_fonts.dart';
 
 class FeaturedSection extends StatelessWidget {
