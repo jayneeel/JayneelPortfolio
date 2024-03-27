@@ -41,6 +41,8 @@ dependencies:
   flutter_svg: ^2.0.10+1
   get: ^4.6.6
   dots_indicator: ^3.0.0
+  web_smooth_scroll: ^1.1.0
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

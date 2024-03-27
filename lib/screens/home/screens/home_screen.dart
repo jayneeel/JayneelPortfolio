@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:jayneel_portfolio/constants/constant_fonts.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
 import 'package:jayneel_portfolio/widgets/education_section_widget.dart';
 import '../../../widgets/app_bar_section_widget.dart';
@@ -6,9 +9,26 @@ import '../../../widgets/experience_section_widget.dart';
 import '../../../widgets/featured_section_widget.dart';
 import '../../../widgets/project_section_widget.dart';
 import '../../../widgets/skills_section_widget.dart';
+import '../../../widgets/status_bar_section_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late String time;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final now = DateTime.now();
+    time = DateFormat.jm().format(now);
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +52,10 @@ class HomeScreen extends StatelessWidget {
           child: Center(
             child: Container(
               width: 500,
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(18),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  border: Border.all(color: Colors.black, width: 5),
+                  border: Border.all(color: Colors.black, width: 10),
                   borderRadius: const BorderRadius.only(topLeft: Radius.circular(70), topRight: Radius.circular(70))),
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
@@ -44,39 +64,17 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Center(
-                          child: Container(
-                        width: 200,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.black87,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 40,
-                              height: 40,
-                              decoration: const BoxDecoration(
-                                color: Colors.grey,
-                                shape: BoxShape.circle,
-                              ),
-                            )
-                          ],
-                        ),
-                      )),
+                      StatusBarSection(time: time),
                       const AppBarSection(),
-                      SizeConstant.getHeightSpace(22),
+                      SizeConstant.getHeightSpace(30),
                       const FeaturedSection(),
-                      SizeConstant.getHeightSpace(22),
+                      SizeConstant.getHeightSpace(30),
                       const ExperienceSection(),
-                      SizeConstant.getHeightSpace(22),
+                      SizeConstant.getHeightSpace(30),
                       const SkillSection(),
-                      SizeConstant.getHeightSpace(22),
+                      SizeConstant.getHeightSpace(30),
                       const ProjectsSection(),
-                      SizeConstant.getHeightSpace(22),
+                      SizeConstant.getHeightSpace(30),
                       const EducationSection()
                     ],
                   ),

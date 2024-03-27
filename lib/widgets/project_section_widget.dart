@@ -22,18 +22,27 @@ class ProjectsSection extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-        const ProjectCard(projectName: "FitStack", image: "assets/images/fitstack_app.png",),
-        const ProjectCard(projectName: "TruFit Network", image: "assets/images/fitstack_app.png",),
-        const ProjectCard(projectName: "TrackYourGyaan", image: "assets/images/fitstack_app.png",),
-        const ProjectCard(projectName: "Recognizing Physiotherapy \nExercises\nusing Machine Learning", image: "assets/images/fitstack_app.png",),
+              const ProjectCard(
+                projectName: "FitStack",
+                image: "assets/images/fitstack_app.png",
+              ),
+              const ProjectCard(
+                projectName: "TruFit Network",
+                image: "assets/images/fitstack_app.png",
+              ),
+              const ProjectCard(
+                projectName: "TrackYourGyaan",
+                image: "assets/images/fitstack_app.png",
+              ),
               Container(
                 width: 100,
                 height: 100,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.blueAccent
+                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.blueAccent),
+                child: const Icon(
+                  Icons.arrow_forward_rounded,
+                  size: 50,
+                  color: Colors.white,
                 ),
-                child: const Icon(Icons.arrow_forward_ios, size: 50, color: Colors.white,),
               )
             ],
           ),
@@ -51,21 +60,51 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(right: 15),
       padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color(0xFF788A8E))
-      ),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFF788A8E))),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(image, width: 200, height: 350,),
+          Image.asset(
+            image,
+            width: 200,
+            height: 350,
+          ),
           SizeConstant.getHeightSpace(15),
-          Text(projectName, style: const TextStyle(fontFamily: ConstantFonts.poppinsMedium, fontSize: 18),),
+          Text(
+            projectName,
+            style: const TextStyle(fontFamily: ConstantFonts.poppinsMedium, fontSize: 18),
+          ),
+          SizeConstant.getHeightSpace(10),
+          const Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TechnologyChip()
+            ],
+          )
         ],
       ),
     );
   }
 }
+
+class TechnologyChip extends StatelessWidget {
+  const TechnologyChip({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      decoration: BoxDecoration(
+        border: Border.all(color: const Color(0xFFF134B7)),
+        borderRadius: BorderRadius.circular(50),
+        color: const Color(0xFFFA71E1)
+      ),
+      child: const Text("Android", style: TextStyle(color: Colors.white),),
+    );
+  }
+}
+
