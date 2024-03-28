@@ -18,6 +18,7 @@ class ProjectsSection extends StatelessWidget {
           "Projects",
           style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
         ),
+        SizeConstant.getHeightSpace(16),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -27,7 +28,7 @@ class ProjectsSection extends StatelessWidget {
                 image: "assets/images/fitstack_app.png",
               ),
               const ProjectCard(
-                projectName: "TruFit Network",
+                projectName: "FitPhysioPro",
                 image: "assets/images/fitstack_app.png",
               ),
               const ProjectCard(
@@ -61,7 +62,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 15),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(12),
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFF788A8E))),
       child: Column(

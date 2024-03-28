@@ -20,10 +20,20 @@ class FeaturedSection extends StatelessWidget {
           "Featured",
           style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
         ),
+        SizeConstant.getHeightSpace(16),
         Obx(() => CarouselSlider(items: [
-          FeaturedItem(image: 'assets/images/hackathon_certificate.png', onTap: ()=> controller.likeUnlike, likes: controller.hackathonLikes.value, ),
-          FeaturedItem(image: 'assets/images/ieee_certificate.png', onTap: () {  }, likes: controller.hackathonLikes.value),
-        ], options: CarouselOptions(autoPlay: true)),)
+              FeaturedItem(
+                image: 'assets/images/hackathon_certificate.png',
+                onTap: () => controller.likeUnlike(),
+                likes: controller.hackathonLikes.value,
+                icon: controller.icon.value,
+              ),
+              FeaturedItem(
+                  image: 'assets/images/ieee_certificate.png',
+                  onTap: () {},
+                  likes: controller.hackathonLikes.value,
+                  icon: controller.icon.value),
+            ], options: CarouselOptions(autoPlay: true)))
       ],
     );
   }
@@ -31,11 +41,16 @@ class FeaturedSection extends StatelessWidget {
 
 class FeaturedItem extends StatelessWidget {
   const FeaturedItem({
-    super.key, required this.image, required this.onTap, required this.likes,
+    super.key,
+    required this.image,
+    required this.onTap,
+    required this.likes,
+    required this.icon,
   });
   final String image;
   final Function() onTap;
   final int likes;
+  final Icon icon;
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +63,7 @@ class FeaturedItem extends StatelessWidget {
         children: [
           InkWell(
               onTap: () => Container(),
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(image))),
+              child: ClipRRect(borderRadius: BorderRadius.circular(10), child: Image.asset(image))),
           SizeConstant.getHeightSpace(15),
           Row(
             mainAxisSize: MainAxisSize.min,

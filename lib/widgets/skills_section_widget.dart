@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jayneel_portfolio/widgets/skill_card.dart';
 import '../constants/constant_fonts.dart';
+import '../constants/constant_size.dart';
 
 
 class SkillSection extends StatelessWidget {
@@ -10,14 +11,15 @@ class SkillSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           "Skills",
           style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
         ),
-        SingleChildScrollView(
+        SizeConstant.getHeightSpace(16),
+        const SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [

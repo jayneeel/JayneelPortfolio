@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
+import 'package:jayneel_portfolio/widgets/contact_section_widget.dart';
 import 'package:jayneel_portfolio/widgets/education_section_widget.dart';
 import '../../../widgets/app_bar_section_widget.dart';
 import '../../../widgets/experience_section_widget.dart';
@@ -21,7 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     final now = DateTime.now();
     time = DateFormat.jm().format(now);
@@ -63,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       StatusBarSection(time: time),
+                      SizeConstant.getHeightSpace(15),
                       const AppBarSection(),
                       SizeConstant.getHeightSpace(30),
                       const FeaturedSection(),
@@ -73,7 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizeConstant.getHeightSpace(30),
                       const ProjectsSection(),
                       SizeConstant.getHeightSpace(30),
-                      const EducationSection()
+                      const EducationSection(),
+                      SizeConstant.getHeightSpace(30),
+                      const ContactMeSection()
                     ],
                   ),
                 ),
