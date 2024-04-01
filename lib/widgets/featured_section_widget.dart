@@ -36,6 +36,13 @@ class FeaturedSection extends StatelessWidget {
                 icon: controller.icon.value,
                 title: 'IEEE National Workshop',
               ),
+              FeaturedItem(
+                image: 'assets/images/hackathon_certificate.png',
+                onTap: () => controller.likeUnlike(),
+                likes: controller.hackathonLikes.value,
+                icon: controller.icon.value,
+                title: 'Flutter Workshop',
+              ),
             ], options: CarouselOptions(autoPlay: true)))
       ],
     );

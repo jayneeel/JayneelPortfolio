@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 5,right: 5,top: 40),
+          padding: const EdgeInsets.only(left: 5, right: 5, top: 40),
           child: Center(
             child: Container(
               width: 500,
@@ -56,7 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   border: Border.all(color: Colors.black, width: 10),
                   borderRadius: const BorderRadius.only(topLeft: Radius.circular(70), topRight: Radius.circular(70))),
               child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false, dragDevices: {
+                  PointerDeviceKind.touch,
+                  PointerDeviceKind.mouse,
+                }),
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Column(

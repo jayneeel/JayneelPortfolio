@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
 
 import '../constants/constant_fonts.dart';
+import 'dart:html' as html;
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({
@@ -28,21 +29,24 @@ class ProjectsSection extends StatelessWidget {
                 image: "assets/images/fitstack_app.png",
               ),
               const ProjectCard(
-                projectName: "FitPhysioPro",
+                projectName: "TruFit Network",
                 image: "assets/images/fitstack_app.png",
               ),
               const ProjectCard(
-                projectName: "TrackYourGyaan",
+                projectName: "FitPhysioPro",
                 image: "assets/images/fitstack_app.png",
               ),
-              Container(
-                width: 100,
-                height: 100,
-                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.blueAccent),
-                child: const Icon(
-                  Icons.arrow_forward_rounded,
-                  size: 50,
-                  color: Colors.white,
+              InkWell(
+                onTap: () => html.window.open("https://github.com/jayneeel", "Jayneel"),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.blueAccent),
+                  child: const Icon(
+                    Icons.arrow_forward_rounded,
+                    size: 50,
+                    color: Colors.white,
+                  ),
                 ),
               )
             ],
@@ -82,9 +86,7 @@ class ProjectCard extends StatelessWidget {
           SizeConstant.getHeightSpace(10),
           const Row(
             mainAxisSize: MainAxisSize.min,
-            children: [
-              TechnologyChip()
-            ],
+            children: [TechnologyChip()],
           )
         ],
       ),
@@ -100,12 +102,13 @@ class TechnologyChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFF134B7)),
-        borderRadius: BorderRadius.circular(50),
-        color: const Color(0xFFFA71E1)
+          border: Border.all(color: const Color(0xFFF134B7)),
+          borderRadius: BorderRadius.circular(50),
+          color: const Color(0xFFFA71E1)),
+      child: const Text(
+        "Android",
+        style: TextStyle(color: Colors.white),
       ),
-      child: const Text("Android", style: TextStyle(color: Colors.white),),
     );
   }
 }
-
