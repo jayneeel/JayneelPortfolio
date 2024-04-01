@@ -27,12 +27,12 @@ class ExperienceCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(position),
-              Text(duration, style: const TextStyle(fontStyle: FontStyle.italic),),
+              Flexible(child: Text(position, style: const TextStyle(color: Color(0xFF080808), fontFamily: ConstantFonts.poppinsMedium))),
+              Flexible(child: Text(duration, style: const TextStyle(fontStyle: FontStyle.italic),)),
             ],
           ),
           SizeConstant.getHeightSpace(10),
-          Text(description, softWrap: true,),
+          Text(description, softWrap: true, style: const TextStyle(fontSize: 14, color: Color(0xFF080808)),),
         ],
       ),
     );

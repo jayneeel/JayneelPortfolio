@@ -42,13 +42,15 @@ class StatusBarSection extends StatelessWidget {
                 ],
               ),
             )),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.signal_cellular_alt),
-            SizeConstant.getWidthSpace(10),
-            const Icon(CupertinoIcons.battery_100, color: Colors.green,),
-          ],
+        Flexible(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.signal_cellular_alt),
+              SizeConstant.getWidthSpace(5),
+              const Icon(CupertinoIcons.battery_100, color: Colors.green,),
+            ],
+          ),
         )
       ],
     );

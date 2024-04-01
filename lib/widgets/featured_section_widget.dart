@@ -27,12 +27,15 @@ class FeaturedSection extends StatelessWidget {
                 onTap: () => controller.likeUnlike(),
                 likes: controller.hackathonLikes.value,
                 icon: controller.icon.value,
+                title: 'National Level Hackathon',
               ),
               FeaturedItem(
-                  image: 'assets/images/ieee_certificate.png',
-                  onTap: () {},
-                  likes: controller.hackathonLikes.value,
-                  icon: controller.icon.value),
+                image: 'assets/images/ieee_certificate.png',
+                onTap: () {},
+                likes: controller.hackathonLikes.value,
+                icon: controller.icon.value,
+                title: 'IEEE National Workshop',
+              ),
             ], options: CarouselOptions(autoPlay: true)))
       ],
     );
@@ -46,8 +49,10 @@ class FeaturedItem extends StatelessWidget {
     required this.onTap,
     required this.likes,
     required this.icon,
+    required this.title,
   });
   final String image;
+  final String title;
   final Function() onTap;
   final int likes;
   final Icon icon;
@@ -55,7 +60,7 @@ class FeaturedItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadius.circular(10)),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -64,22 +69,35 @@ class FeaturedItem extends StatelessWidget {
           InkWell(
               onTap: () => Container(),
               child: ClipRRect(borderRadius: BorderRadius.circular(10), child: Image.asset(image))),
-          SizeConstant.getHeightSpace(15),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizeConstant.getWidthSpace(15),
-              InkWell(
-                onTap: onTap,
-                child: Row(
+          SizeConstant.getHeightSpace(10),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  title,
+                  style:
+                      const TextStyle(fontFamily: ConstantFonts.poppinsMedium, color: Color(0xFF0D0D0D), fontSize: 14),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.thumb_up_alt_outlined),
-                    SizeConstant.getWidthSpace(8),
-                    Text(likes.toString())
+                    InkWell(
+                      onTap: onTap,
+                      child: Row(
+                        children: [
+                          const Icon(Icons.thumb_up_alt_outlined),
+                          SizeConstant.getWidthSpace(8),
+                          Text(likes.toString())
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              )
-            ],
+              ],
+            ),
           )
         ],
       ),
