@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Jayneel Kanungo",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: ConstantFonts.poppinsRegular,
