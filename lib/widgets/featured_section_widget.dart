@@ -37,7 +37,7 @@ class FeaturedSection extends StatelessWidget {
                 title: 'IEEE National Workshop',
               ),
               FeaturedItem(
-                image: 'assets/images/hackathon_certificate.png',
+                image: 'assets/images/workshop.jpg',
                 onTap: () => controller.likeUnlike(),
                 likes: controller.hackathonLikes.value,
                 icon: controller.icon.value,
@@ -75,7 +75,7 @@ class FeaturedItem extends StatelessWidget {
         children: [
           InkWell(
               onTap: () => Container(),
-              child: ClipRRect(borderRadius: BorderRadius.circular(10), child: Image.asset(image))),
+              child: ClipRRect(borderRadius: BorderRadius.circular(10), child: Image.asset(image, width: 565, height: 180,))),
           SizeConstant.getHeightSpace(10),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
