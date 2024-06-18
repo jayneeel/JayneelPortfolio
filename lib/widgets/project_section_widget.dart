@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:jayneel_portfolio/constants/constant_size.dart';
+import 'package:jayneel_portfolio/constants/contant_colors.dart';
 
 import '../constants/constant_fonts.dart';
 import 'dart:html' as html;
@@ -25,16 +28,34 @@ class ProjectsSection extends StatelessWidget {
           child: Row(
             children: [
               const ProjectCard(
+                projectName: "SeekReunite",
+                image: "assets/images/fitstack_app.png",
+                technologies: ["Flutter", "Dart", "ML Kit", "Firebase"],
+              ),
+              const ProjectCard(
                 projectName: "FitStack",
                 image: "assets/images/fitstack_app.png",
+                technologies: ["Android", "Flutter", "Dart", "Kotlin", "Java", "Firebase"],
               ),
               const ProjectCard(
                 projectName: "TruFit Network",
                 image: "assets/images/fitstack_app.png",
+                technologies: ["Android", "Flutter", "Dart", "Kotlin", "Java", "Firebase"],
               ),
               const ProjectCard(
                 projectName: "FitPhysioPro",
                 image: "assets/images/fitstack_app.png",
+                technologies: [
+                  "Python",
+                  "MediaPipe",
+                  "FaceNet",
+                  "Firebase",
+                ],
+              ),
+              const ProjectCard(
+                projectName: "KickStash",
+                image: "assets/images/fitstack_app.png",
+                technologies: ["Flutter", "Dart", "Provider"],
               ),
               InkWell(
                 onTap: () => html.window.open("https://github.com/jayneeel", "Jayneel"),
@@ -58,13 +79,15 @@ class ProjectsSection extends StatelessWidget {
 }
 
 class ProjectCard extends StatelessWidget {
-  const ProjectCard({super.key, required this.projectName, required this.image});
+  const ProjectCard({super.key, required this.projectName, required this.image, required this.technologies});
   final String projectName;
   final String image;
+  final List<String> technologies;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 250,
       margin: const EdgeInsets.only(right: 15),
       padding: const EdgeInsets.all(12),
       decoration:
@@ -84,10 +107,25 @@ class ProjectCard extends StatelessWidget {
             style: const TextStyle(fontFamily: ConstantFonts.poppinsMedium, fontSize: 18),
           ),
           SizeConstant.getHeightSpace(10),
-          const Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [TechnologyChip()],
-          )
+          SizedBox(
+              height: 40,
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  final technology = technologies[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Chip(
+                      backgroundColor: ConstantColors.chipColors[Random().nextInt(ConstantColors.chipColors.length)],
+                      label: Text(technology),
+                      labelStyle: const TextStyle(color: ConstantColors.whiteColor),
+                      padding: const EdgeInsets.all(5),
+                    ),
+                  );
+                },
+                shrinkWrap: true,
+                itemCount: technologies.length,
+                scrollDirection: Axis.horizontal,
+              ))
         ],
       ),
     );
