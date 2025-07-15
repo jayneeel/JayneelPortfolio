@@ -44,7 +44,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
                     width: 20,
                     height: 20,
                   ),
-                  SizeConstant.getHeightSpace(10),
+                  SizeConstant.getWidthSpace(10),
                   Text(
                     widget.companyName,
                     style: const TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20),
