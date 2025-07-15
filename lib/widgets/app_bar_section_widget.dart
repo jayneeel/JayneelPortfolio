@@ -18,7 +18,7 @@ class AppBarSection extends StatelessWidget {
         const Flexible(
           child: Text(
             "Jayneel Manish Kanungo",
-            style: TextStyle(fontSize: 28, fontFamily: ConstantFonts.poppinsBold, color: Colors.black),
+            style: TextStyle(fontSize: 28, fontFamily: ConstantFonts.interBold, color: Colors.black),
           ),
         ),
       ],

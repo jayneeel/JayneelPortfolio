@@ -18,7 +18,7 @@ class FeaturedSection extends StatelessWidget {
       children: [
         const Text(
           "Featured",
-          style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
+          style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: Colors.black),
         ),
         SizeConstant.getHeightSpace(16),
         Obx(() => CarouselSlider(items: [
@@ -86,7 +86,7 @@ class FeaturedItem extends StatelessWidget {
                 Text(
                   title,
                   style:
-                      const TextStyle(fontFamily: ConstantFonts.poppinsMedium, color: Color(0xFF0D0D0D), fontSize: 14),
+                      const TextStyle(fontFamily: ConstantFonts.interMedium, color: Color(0xFF0D0D0D), fontSize: 14),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,

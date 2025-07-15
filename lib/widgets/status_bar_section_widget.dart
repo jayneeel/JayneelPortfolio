@@ -18,7 +18,7 @@ class StatusBarSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(time, style: const TextStyle(fontSize: 18, fontFamily: ConstantFonts.poppinsBold),),
+        Text(time, style: const TextStyle(fontSize: 18, fontFamily: ConstantFonts.interBold),),
         Center(
             child: Container(
               width: 200,

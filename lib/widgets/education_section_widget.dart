@@ -11,7 +11,7 @@ class EducationSection extends StatelessWidget {
       children: [
         const Text(
           "Education",
-          style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
+          style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: Colors.black),
         ),
         educationCard("Datta Meghe College of Engineering, Airoli"),
         educationCard("Vidya Prasarak Mandal Polytechnic, Thane"),

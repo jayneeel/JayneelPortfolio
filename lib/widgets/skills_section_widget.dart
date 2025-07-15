@@ -16,7 +16,7 @@ class SkillSection extends StatelessWidget {
       children: [
         const Text(
           "Skills",
-          style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
+          style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: Colors.black),
         ),
         SizeConstant.getHeightSpace(16),
         const SingleChildScrollView(

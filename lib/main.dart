@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: "Jayneel Kanungo",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: ConstantFonts.poppinsRegular,
+        fontFamily: ConstantFonts.interRegular,
       ),
       home: const HomeScreen(),
     );

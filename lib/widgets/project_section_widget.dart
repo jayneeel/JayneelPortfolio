@@ -20,7 +20,7 @@ class ProjectsSection extends StatelessWidget {
       children: [
         const Text(
           "Projects",
-          style: TextStyle(fontFamily: ConstantFonts.poppinsBold, fontSize: 20, color: Colors.black),
+          style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: Colors.black),
         ),
         SizeConstant.getHeightSpace(16),
         SingleChildScrollView(
@@ -104,7 +104,7 @@ class ProjectCard extends StatelessWidget {
           SizeConstant.getHeightSpace(15),
           Text(
             projectName,
-            style: const TextStyle(fontFamily: ConstantFonts.poppinsMedium, fontSize: 18),
+            style: const TextStyle(fontFamily: ConstantFonts.interMedium, fontSize: 18),
           ),
           SizeConstant.getHeightSpace(10),
           SizedBox(

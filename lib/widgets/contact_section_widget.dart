@@ -39,7 +39,7 @@ class ContactMeSection extends StatelessWidget {
             const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text("Contact Me!", style: TextStyle(fontFamily: ConstantFonts.poppinsBold, color: Colors.black),),
+                Text("Contact Me!", style: TextStyle(fontFamily: ConstantFonts.interBold, color: Colors.black),),
               ],
             )
           ],

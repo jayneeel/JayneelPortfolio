@@ -23,7 +23,7 @@ class SkillCard extends StatelessWidget {
         children: [
           SvgPicture.asset(image, width: 50, height: 50,),
           SizeConstant.getHeightSpace(10),
-          Text(technology, style: const TextStyle(fontFamily: ConstantFonts.poppinsMedium, fontSize: 16, color: Colors.black54),)
+          Text(technology, style: const TextStyle(fontFamily: ConstantFonts.interMedium, fontSize: 16, color: Colors.black54),)
         ],
       ),
     );
