@@ -11,12 +11,16 @@ class ExperienceCard extends StatefulWidget {
       required this.position,
       required this.duration,
       required this.description,
-      required this.companyLogo});
+      required this.companyLogo,
+        this.descriptionColor = const Color(0xFF080808),
+      this.backgroundColor = const Color(0xFFf5f6f7)});
   final String companyName;
   final String position;
   final String duration;
   final String description;
   final String companyLogo;
+  final Color backgroundColor;
+  final Color descriptionColor;
 
   @override
   State<ExperienceCard> createState() => _ExperienceCardState();
@@ -29,7 +33,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color(0xFFf5f6f7)),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: widget.backgroundColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -79,7 +83,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
               ? Text(
                   widget.description,
                   softWrap: true,
-                  style: const TextStyle(fontSize: 14, color: Color(0xFF080808)),
+                  style: TextStyle(fontSize: 14, color: widget.descriptionColor),
                 )
               : Container()
         ],

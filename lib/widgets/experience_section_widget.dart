@@ -19,21 +19,24 @@ class ExperienceSection extends StatelessWidget {
           style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: Colors.black),
         ),
         SizeConstant.getHeightSpace(16),
-        const ExperienceCard(
+        ExperienceCard(
+          backgroundColor: const Color(0xFFD77CCC),
           companyName: "CircoLife",
-          position: "SDE",
+          position: "Software Engineer",
           duration: "Jun 2024 - present",
           description:
-              " • Developing a business E-commerce app with Flutter Bloc and Blockchain. Integrated real-time APIs and worked onBackend with MongoDB. App Facilitates you to buy, sell and invest your digital gold.\n • Helped in Sprint development by leading the UI revamp team.",
+              "• Developed, tested, and deployed Circolife’s main customer-facing app, Service App, backend services, MQTT server, RabbitMQ integrations, and cloud infrastructure, ensuring high performance and scalability.\n• Built and deployed 15+ new features with comprehensive unit testing and performed major system upgrades on CircoLife 2.0 for multiple customers, enhancing product functionality and user experience.",
           companyLogo: 'circolife-logo.svg',
         ),
         SizeConstant.getHeightSpace(10),
-        const ExperienceCard(
+        ExperienceCard(
+            backgroundColor: Color(0xFF672A70),
             companyName: "BKS MyGold Pvt. Ltd",
-            position: "Flutter Intern",
+            position: "Software Developer",
             duration: "Jun 2023 - Jun 2024",
+            descriptionColor: Color(0xFF),
             description:
-                " • Developed a business E-commerce app with Flutter Bloc and Blockchain. Integrated real-time APIs and worked on Backend with MongoDB. App Facilitates you to buy, sell and invest your digital gold.\n • Helped in Sprint development by leading the revamp team.",
+                "• Developed a business E-commerce app with Flutter Bloc and Blockchain. Integrated real-time APIs and worked on Backend with MongoDB. App Facilitates you to buy, sell and invest your digital gold.\n • Helped in Sprint development by leading the revamp team.",
             companyLogo: 'bks-logo.svg'),
         SizeConstant.getHeightSpace(10),
         const ExperienceCard(
@@ -41,7 +44,7 @@ class ExperienceSection extends StatelessWidget {
             position: "Android & Python Developer",
             duration: "Jan 2022 - Dec 2022",
             description:
-                " • Developed a Student Audit Android app to track and analyze student progress after school lectures with FirebaseRealtime Database and Cloud Storage. Led a team of 2 members and accomplished the project in a designated time.\n • Developed a Django website with Particle Swarm Optimization technique, applied to optimize parameters influencing dam stability, and executed 4 different optimization functions that would prevent a dam from sliding and collapsing.",
+                "• Developed a Student Audit Android app to track and analyze student progress after school lectures with FirebaseRealtime Database and Cloud Storage. Led a team of 2 members and accomplished the project in a designated time.\n • Developed a Django website with Particle Swarm Optimization technique, applied to optimize parameters influencing dam stability, and executed 4 different optimization functions that would prevent a dam from sliding and collapsing.",
             companyLogo: 'circolife-logo.svg')
       ],
     );
