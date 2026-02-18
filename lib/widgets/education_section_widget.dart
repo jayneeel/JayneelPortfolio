@@ -10,7 +10,7 @@ class EducationSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Research",
+          "Education",
           style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: Colors.black),
         ),
         educationCard("Datta Meghe College of Engineering, Airoli"),

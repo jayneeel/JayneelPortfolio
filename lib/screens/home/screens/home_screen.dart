@@ -81,11 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       const EducationSection(),
                       SizeConstant.getHeightSpace(30),
                       const ContactMeSection(),
-                      BottomNavigationBar(items: const [
-                        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-                        BottomNavigationBarItem(icon: Icon(Icons.analytics), label: "Home"),
-                        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Home"),
-                      ])
                     ],
                   ),
                 ),

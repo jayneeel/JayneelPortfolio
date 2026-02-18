@@ -13,7 +13,8 @@ class ExperienceCard extends StatefulWidget {
       required this.description,
       required this.companyLogo,
         this.descriptionColor = const Color(0xFF080808),
-      this.backgroundColor = const Color(0xFFf5f6f7)});
+        this.isSvgLogo = true,
+      this.backgroundColor = const Color(0xFFf5f6f7), this.companyColor = const Color(0xFF262626), this.roleColor= const Color(0xFF737373)});
   final String companyName;
   final String position;
   final String duration;
@@ -21,6 +22,9 @@ class ExperienceCard extends StatefulWidget {
   final String companyLogo;
   final Color backgroundColor;
   final Color descriptionColor;
+  final Color companyColor;
+  final Color roleColor;
+  final bool isSvgLogo;
 
   @override
   State<ExperienceCard> createState() => _ExperienceCardState();
@@ -43,20 +47,20 @@ class _ExperienceCardState extends State<ExperienceCard> {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SvgPicture.asset(
+                  widget.isSvgLogo ? SvgPicture.asset(
                     "assets/images/${widget.companyLogo}",
                     width: 20,
                     height: 20,
-                  ),
+                  ) : Image.asset("assets/images/${widget.companyLogo}", width: 20, height: 20,fit: BoxFit.fitWidth,),
                   SizeConstant.getWidthSpace(10),
                   Text(
                     widget.companyName,
-                    style: const TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20),
+                    style: TextStyle(fontFamily: ConstantFonts.interBold, fontSize: 20, color: widget.companyColor),
                   ),
                 ],
               ),
               IconButton(
-                icon: (expanded) ? const Icon(Icons.expand_less_rounded) : const Icon(Icons.expand_more_rounded),
+                icon: (expanded) ? const Icon(Icons.expand_less_rounded) : const Icon(Icons.expand_more_rounded), color: widget.companyColor,
                 onPressed: () {
                   setState(() {
                     expanded = !expanded;
@@ -70,7 +74,7 @@ class _ExperienceCardState extends State<ExperienceCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
-                  child: Text(widget.position, style: const TextStyle(color: Color(0xFF080808), fontFamily: ConstantFonts.interMedium))),
+                  child: Text(widget.position, style:  TextStyle(color: widget.roleColor, fontFamily: ConstantFonts.interMedium))),
               Flexible(
                   child: Text(
                 widget.duration,
